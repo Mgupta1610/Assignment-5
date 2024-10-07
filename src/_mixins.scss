@@ -1,0 +1,40 @@
+@mixin backImage($image, $position, $origin: 0) {
+  background: url($image) $position $origin;
+  }
+  
+  @mixin setHeaderProperties($color, $font-weight, $font-size, $line-heigth: 0, $margin-bottom: 40px) {
+    color: $color;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    }
+  
+  @mixin setHeightWidth($height: 100px, $width: 100px) {
+  height: $height;
+  width: $width;
+  }
+  
+  // _mixins.scss
+
+// Media Query mixin to simplify responsive design
+@mixin media-query($breakpoint) {
+  @if $breakpoint == desktop {
+    @media screen and (min-width: 960px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == tablet {
+    @media screen and (max-width: 959px) and (min-width: 768px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == mobile {
+    @media screen and (max-width: 767px) {
+      @content;
+    }
+  }
+  @else if $breakpoint == smaller-mobile {
+    @media screen and (max-width: 459px) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,249 @@
+@import 'variables';
+@import 'mixins';
+@import 'navigation';
+
+    body {
+    font-family: $font-family;
+    font-size: 1em;
+    line-height: 2em;
+    background: url($img-body-background) $white-color repeat-x;
+    margin: 0;
+    }
+    
+    main {
+    width: 940px;
+    margin: 0px auto;
+    padding: 0px 10px;
+
+    figure {
+    @include setHeightWidth(190px, 400px);
+    float: left;
+    display: block;
+    margin: 0px;
+    background: url($img-company-logo) 0px 50px no-repeat;
+    }
+
+    header {
+    width:inherit;
+    clear: both;
+    text-align: center;
+    padding-top: 40px;
+    img {
+    max-width:100%;
+    height:auto;
+    }
+    h1 {
+    @include setHeaderProperties($red-color, 100, 4em);
+    }
+    h2 {
+    @include setHeaderProperties($white-color, 900, 2.5em, 0, 70px);
+    }
+    h3 {
+    @include setHeaderProperties($grey-color, 400, 2em, 0, 50px);
+    }
+    }
+    }
+    
+    #headline {
+    @include setHeightWidth(130px, 100%);
+    background: $headline-color;
+    text-align:center;
+    margin:0 auto;
+    h1 {
+    color: $white-color;
+    font-size:2.5em;
+    font-weight:100;
+    padding-top:50px;
+    }
+    }
+    
+    #content {
+    h3 {
+    color:$grey-color;
+    font-size:2em;
+    font-weight:400;
+    }
+    #products {
+    width:460px;
+    float:left;
+    img {
+    float:left;
+    margin-right:20px;
+    }
+    article {
+    margin-bottom:40px;
+    }
+    h4 {
+    line-height: 1em;
+    }
+    }
+    #testimonials {
+    width:460px;
+    float:right;
+    }
+    }
+    
+    .greybar {
+    @include setHeightWidth(90px, 100%);
+    background:#F5F6F6;
+    clear:both;
+    padding-top:30px;
+    }
+     
+    footer {
+    @include setHeightWidth(120px, 100%);
+    background:$footer-background-color;
+    text-align:center;
+    color:$white-color;
+    padding-top:50px;
+    
+    .social-media {
+    margin:0 auto;
+    width:165px;
+    div {
+    float:left;
+    margin-right:5px;
+    &.one {
+    background:url($img-social-media) 0 0;
+    }
+    &.two {
+    background:url($img-social-media) -38px 0;
+    }
+    &.three {
+    background:url($img-social-media) -76px 0;
+    }
+    &.four {
+    background:url($img-social-media) -114px 0;
+    }
+    }
+    a {
+    display:block;
+    @include setHeightWidth(36px, 36px);
+    text-indent:-9999px;
+    }
+    }
+    }
+
+    @include media-query(tablet) {
+        main {
+          width: 768px;
+        }
+        figure {
+          width: inherit;
+          height: 140px;
+          float: none;
+          background-position: center;
+        }
+        nav {
+          width: inherit;
+          height: 50px;
+          float: none;
+          text-align: center;
+      
+          ul {
+            margin-top: 0;
+      
+            li {
+              font-size: 1em;
+              margin: 0 10px;
+            }
+          }
+        }
+        header h1 {
+          font-size: 3em;
+        }
+        header h2 {
+          font-size: 1.5em;
+        }
+        #content {
+          width: inherit;
+      
+          #products,
+          #testimonials {
+            width: 46%;
+            margin: 0 2%;
+          }
+        }
+      }
+      
+      @include media-query(smaller-mobile) {
+        main {
+          width: 460px;
+        }
+        nav ul li {
+          font-size: 0.8em;
+          margin: 0 5px;
+        }
+        header h1 {
+          font-size: 2em;
+        }
+        header h2 {
+          font-size: 1em;
+        }
+        header img {
+          margin-bottom: 100px;
+        }
+        header h3 {
+          font-size: 1.5em;
+        }
+        #headline h1 {
+          font-size: 2em;
+          padding-top: 50px;
+        }
+        #content #products,
+        #content #testimonials {
+          width: 96%;
+          margin: 0;
+          float: none;
+        }
+      }
+      
+      @include media-query(smaller-mobile) {
+        main {
+          width: 300px;
+        }
+        figure {
+          background-size: contain;
+          height: 100px;
+        }
+        nav {
+          margin-bottom: 40px !important;
+        }
+        select {
+          width: 95%;
+        }
+        #headline h1 {
+          font-size: 1.5em;
+          padding-top: 30px;
+        }
+        header img {
+          margin-bottom: 80px;
+        }
+        header h1:first-child {
+          font-size: 1.4em;
+          margin-bottom: 20px;
+        }
+        header h2 {
+          font-size: 1.4em;
+        }
+        header h3 {
+          color: #FFF;
+          font-size: 1em;
+        }
+        #content h3 {
+          font-size: 1.6em;
+        }
+        .greybar,
+        article img {
+          display: none;
+        }
+        footer {
+          text-align: center;
+          p,
+          img {
+            float: none;
+            margin: 0;
+          }
+        }
+      }
+       
